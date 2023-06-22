@@ -76,6 +76,10 @@ const Weather: React.FC = () => {
           {forecastData.map((forecast: any) => (
             <div key={forecast.date} className="forecast-item">
               <p>Date: {forecast.date}</p>
+              <img
+                src={getIconPath(forecast.day.condition.code, isNight)}
+                alt="Weather Icon"
+              />
               <p>Max Temperature: {forecast.day.maxtemp_c}°C</p>
               <p>Min Temperature: {forecast.day.mintemp_c}°C</p>
               <p>Condition: {forecast.day.condition.text}</p>
